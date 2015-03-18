@@ -30,8 +30,8 @@
     <ProductName>Convert A2M4</ProductName>
     <PublisherName>Sürat</PublisherName>
     <MinimumRequiredVersion>1.1.5.15</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.1.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
