@@ -184,7 +184,7 @@ Partial Class frmMain
         'dlgOpen
         '
         Me.dlgOpen.DefaultExt = "avi"
-        Me.dlgOpen.Filter = "AVI Dosyalası|*.avi"
+        Me.dlgOpen.Filter = "AVI Dosyalası|*.avi|Windows Media Videos|*.wmv|Flash Videos|*.flv"
         Me.dlgOpen.Multiselect = True
         '
         'frmMain
