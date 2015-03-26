@@ -11,7 +11,6 @@
 ''' 
 ''' </remarks>
 Public Class frmMain
-    Dim proc As New Process 'durdurma işlemi yapabilmek için global bir değişken yapıyoruz
     Private Sub btnOpen_Click(sender As Object, e As EventArgs) Handles btnOpen.Click
         If RadioButton1.Checked = True Then 'eğer tek bir dosya açacaksa dosya seç dialogu gelecek.
             dlgOpen.ShowDialog()
@@ -22,12 +21,16 @@ Public Class frmMain
         End If
     End Sub
     Private Sub btnFolder_Click(sender As Object, e As EventArgs) Handles btnFolder.Click
-        'önce dönüştürülecek dosyanın mp4 uzantılı adı bulunur.
-        Dim ad() As String = txtFrom.Text.Split("\") : Dim ad2 As String = ad(UBound(ad)).Replace(".avi", ".mp4").Replace(".flv", ".mp4").Replace(".wmv", ".mp4")
-        'kayıt yeri klasör olarak seçilir. aynı isimle mp4 uzantılı olarak kaydedilecek.
         dlgFolder.ShowDialog()
-        If dlgFolder.SelectedPath <> "" And dlgFolder.SelectedPath <> txtTo.Text Then txtTo.Text = dlgFolder.SelectedPath
-        If Strings.Right(txtTo.Text, 1) = "\" Then txtTo.Text &= ad2 Else txtTo.Text &= "\" & ad2
+        If dlgFolder.SelectedPath <> "" Then
+            txtTo.Text = dlgFolder.SelectedPath
+            If RadioButton1.Checked = True Then 'eğer tek bir dosya dönüşecekse seçilen klasör adındansonra pdf adını ekle
+                Dim tmp() As String = txtFrom.Text.Split("\") : Dim DosyaAd As String = tmp(UBound(tmp)).Replace(".avi", ".mp4").Replace(".flv", ".mp4").Replace(".wmv", ".mp4") 'burada sadece pdfin adı bulundu
+                txtTo.Text += "\" & DosyaAd
+            Else 'yok tüm klasör değişecekse seçilen klasörden sonra aşağıdaki gibi bir şey ekle
+                txtTo.Text = dlgFolder.SelectedPath & "\*.mp4"
+            End If
+        End If
     End Sub
     Private Sub btnConvert_Click(sender As Object, e As EventArgs) Handles btnConvert.Click
         If txtTo.Text = "" Then Exit Sub

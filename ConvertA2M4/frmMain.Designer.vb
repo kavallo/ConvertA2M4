@@ -112,7 +112,6 @@ Partial Class frmMain
         Me.txtFrom.Location = New System.Drawing.Point(179, 16)
         Me.txtFrom.Multiline = True
         Me.txtFrom.Name = "txtFrom"
-        Me.txtFrom.ReadOnly = True
         Me.txtFrom.Size = New System.Drawing.Size(397, 32)
         Me.txtFrom.TabIndex = 1
         Me.txtFrom.TabStop = False
@@ -123,7 +122,6 @@ Partial Class frmMain
         Me.txtTo.Location = New System.Drawing.Point(179, 54)
         Me.txtTo.Multiline = True
         Me.txtTo.Name = "txtTo"
-        Me.txtTo.ReadOnly = True
         Me.txtTo.Size = New System.Drawing.Size(397, 32)
         Me.txtTo.TabIndex = 3
         Me.txtTo.TabStop = False
